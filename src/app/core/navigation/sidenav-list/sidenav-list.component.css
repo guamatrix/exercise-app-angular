@@ -1,0 +1,14 @@
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+}
+
+a:hover, a:active {
+  color: #c3c3c3;
+}
+
+.sidenav-label {
+  padding-left: 6px;
+  /* display: inline-block; */
+}

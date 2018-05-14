@@ -1,0 +1,24 @@
+<mat-nav-list>
+    <ng-template [ngIf]="!isLogged">
+      <a mat-list-item routerLink="/signup" (click)="onClose()">
+        <mat-icon>face</mat-icon>
+        <span class="sidenav-label">Signup</span>
+      </a>
+      <a mat-list-item routerLink="/login" (click)="onClose()">
+        <mat-icon>input</mat-icon>
+        <span class="sidenav-label">Login</span>
+      </a>
+    </ng-template>
+    <ng-template [ngIf]="isLogged">
+      <a mat-list-item routerLink="/training" (click)="onClose()">
+        <mat-icon>fitness_center</mat-icon>
+        <span class="sidenav-label">Training</span>
+      </a>
+      <mat-list-item>
+        <button mat-icon-button (click)="onLogout()">
+          <mat-icon>eject</mat-icon>
+          <span class="sidenav-label">Logout</span>
+        </button>
+      </mat-list-item>
+    </ng-template>
+</mat-nav-list>

@@ -1,0 +1,19 @@
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+}
+
+a:hover, a:active {
+  color: #c3c3c3;
+}
+
+.navigation-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.active {
+  color: #c3c3c3;
+}

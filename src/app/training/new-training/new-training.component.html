@@ -1,0 +1,19 @@
+<section class="new-training" fxLayoutAlign="center">
+  <form (ngSubmit)="onSubmit()" [formGroup]="formTraining">
+    <mat-card fxFlex.xs="100%" fxFlex="400px">
+      <mat-card-title fxLayoutAlign="center">Time to start a workout!</mat-card-title>
+      <mat-card-content fxLayoutAlign="center">
+        <mat-form-field *ngIf="!isLoading && typesTaingins">
+          <mat-select placeholder="Select your training" formControlName="training">
+            <mat-option *ngFor="let training of typesTaingins" [value]="training.id">{{ training.name  }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-spinner *ngIf="isLoading"></mat-spinner>
+      </mat-card-content>
+      <mat-card-actions fxLayoutAlign="center" *ngIf="!isLoading">
+        <button *ngIf="typesTaingins"  type="submit" mat-raised-button [disabled]="formTraining.invalid" color="primary">Start</button>
+        <button *ngIf="!typesTaingins" type="button" mat-raised-button color="accent" (click)="tryFetch()">Try Again</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+</section>
